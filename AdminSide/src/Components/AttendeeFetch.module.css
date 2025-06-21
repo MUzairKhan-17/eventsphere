@@ -1,0 +1,177 @@
+/* 🌌 Container */
+.attendeeContainer {
+  padding: 20px;
+  background: linear-gradient(135deg, #001f1f, #004d4d);
+  min-height: 100vh;
+  color: white;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 🏷 Title */
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #00ffcc;
+  text-shadow: 0 0 10px rgba(0, 255, 204, 0.8);
+  margin-bottom: 20px;
+}
+
+/* 🔍 Search Input */
+.searchInput {
+  width: 60%;
+  max-width: 400px;
+  padding: 12px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: rgba(0, 77, 77, 0.5);
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 255, 204, 0.4);
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.searchInput::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.searchInput:focus {
+  background: rgba(0, 77, 77, 0.7);
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.7);
+}
+
+/* 🗂 Table Container */
+.attendeeTableWrapper {
+  margin: 20px 0 0 20%;
+  overflow-x: auto;
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.15);
+  border-radius: 12px;
+  width: 80%;
+  backdrop-filter: blur(5px);
+}
+
+/* 📋 Table */
+.attendeeTable {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+.attendeeTable th,
+.attendeeTable td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 1rem;
+}
+
+.attendeeTable th {
+  background: rgba(0, 255, 204, 0.15);
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  backdrop-filter: blur(6px);
+}
+
+.attendeeTable tr {
+  transition: all 0.3s ease-in-out;
+}
+
+.attendeeTable tr:hover {
+  background: rgba(0, 255, 204, 0.12);
+}
+
+/* 🛑 Error Message */
+.error {
+  color: red;
+  text-align: center;
+  padding: 20px 0;
+  font-weight: bold;
+}
+
+/* 🔄 Loading Text */
+.loadingText {
+  text-align: center;
+  color: #00ffcc;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  animation: glowFade 2s ease-in-out infinite;
+}
+
+@keyframes glowFade {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* 🔄 Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+.pagination button {
+  background: linear-gradient(135deg, #008080, #00e6b8);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+}
+
+.pagination button:disabled {
+  background: rgba(0, 255, 204, 0.3);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #006666, #00cc99);
+  transform: scale(1.1);
+}
+
+.pagination span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #00ffcc;
+}
+
+/* 🌟 Responsive */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .attendeeTable th,
+  .attendeeTable td {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .searchInput {
+    width: 90%;
+  }
+
+  .attendeeTableWrapper {
+    width: 100%;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}

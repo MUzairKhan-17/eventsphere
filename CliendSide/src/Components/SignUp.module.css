@@ -1,0 +1,288 @@
+/* 🌌 Fullscreen Background with Animated Glow */
+.signUpContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: radial-gradient(circle, #001f1f, #00b3b3);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+  animation: fadeIn 1.2s ease-in-out;
+  position: relative;
+}
+
+/* 🌟 Floating Background Glow */
+.signUpContainer::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(0, 255, 204, 0.2);
+  filter: blur(120px);
+  border-radius: 50%;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: floatingGlow 6s infinite alternate ease-in-out;
+}
+
+@keyframes floatingGlow {
+  from { transform: translateY(0); }
+  to { transform: translateY(30px); }
+}
+
+/* ✨ Title & Subtitle Animations */
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #00ffcc;
+  animation: fadeInUp 1s ease-in-out 0.5s forwards;
+  opacity: 1;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #a0e7e5;
+  animation: fadeInUp 1s ease-in-out 0.7s forwards;
+  opacity: 1;
+}
+
+/* ✨ Glassmorphic Sign-Up Form */
+.signUpForm {
+  background: rgba(0, 77, 77, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+  width: 90%;
+  max-width: 380px;
+  animation: fadeInUp 1s ease-in-out 1s forwards;
+  transition: all 0.3s ease;
+}
+
+.signUpForm:hover {
+  box-shadow: 0 0 25px rgba(0, 255, 204, 0.5);
+}
+
+/* 🏷️ Input Fields with Glow Effect */
+.inputGroup {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+/* Hide arrows in WebKit browsers */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+
+.inputGroup:hover {
+  border: 1px solid #00ffcc;
+}
+
+.inputGroup input {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 10px;
+  flex: 1;
+  font-size: 1rem;
+  color: white;
+}
+
+.inputGroup input::placeholder {
+  color: #a0e7e5;
+}
+
+/* 🌀 Floating Icon Effect */
+.icon {
+  color: #00ffcc;
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+/* 🔄 Rotated Phone Icon */
+.phone {
+  rotate: 90deg;
+}
+
+/* 🎭 Submit Button with Ripple Effect */
+.submitButton {
+  background: linear-gradient(135deg, #00b3b3, #00ffcc);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+}
+
+.submitButton:hover {
+  background: linear-gradient(135deg, #008080, #00e6b8);
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.7);
+}
+
+.submitButton:active {
+  transform: scale(0.95);
+}
+
+/* 🔵 Ripple Effect on Click */
+.submitButton::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.submitButton:active::after {
+  opacity: 1;
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  from { transform: scale(0); opacity: 1; }
+  to { transform: scale(3); opacity: 0; }
+}
+
+/* 🔘 Toggle Button */
+.toggleButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #00ffcc;
+  transition: transform 0.2s ease-in-out;
+}
+
+.toggleButton:hover {
+  transform: scale(1.1);
+}
+
+/* 📱 Responsive Styles */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .signUpForm {
+    padding: 1.5rem;
+  }
+
+  .inputGroup {
+    padding: 8px;
+  }
+
+  .submitButton {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .toggleButton {
+    position: absolute;
+    right: 10%;
+  }
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeIn {
+  animation: fadeSlideIn 0.8s ease-out;
+}
+
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.popupBox {
+  background: rgba(0, 77, 77, 0.9);
+  border: 2px solid #00ffcc;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  color: #a0e7e5;
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.6);
+  animation: fadeInUp 0.5s ease;
+}
+
+.closePopupButton {
+  background: linear-gradient(135deg, #00b3b3, #00ffcc);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.closePopupButton:hover {
+  background: linear-gradient(135deg, #008080, #00e6b8);
+  transform: scale(1.05);
+}
+
+/* 🎞️ Animations */
+@keyframes popupFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slidePopupUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.warningText {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #a0e7e5;
+  opacity: 1;
+  animation: fadeInUp 0.5s ease-in-out;
+}

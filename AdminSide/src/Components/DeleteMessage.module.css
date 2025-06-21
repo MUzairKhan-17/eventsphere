@@ -1,0 +1,213 @@
+/* 🌌 Container */
+.container {
+  padding: 20px;
+  background: linear-gradient(135deg, #001f1f, #004d4d);
+  min-height: 100vh;
+  color: white;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+
+/* 🏷 Title */
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #00ffcc;
+  text-shadow: 0 0 10px rgba(0, 255, 204, 0.8);
+}
+
+/* 🔍 Search Input */
+.searchInput {
+  width: 60%;
+  max-width: 400px;
+  padding: 12px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin: 20px 0 20px 20%;
+  background: rgba(0, 77, 77, 0.5);
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 255, 204, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+
+.searchInput::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.searchInput:focus {
+  background: rgba(0, 77, 77, 0.7);
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.7);
+}
+
+/* 🗂 Table Container */
+.tableWrapper {
+  margin: 20px 0 0 20%;
+  overflow-x: auto;
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+  border-radius: 10px;
+  width: 80%;
+}
+
+.tableWrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.tableWrapper::-webkit-scrollbar-thumb {
+  background: #00ffcc;
+  border-radius: 10px;
+}
+
+/* 📋 Table Styling */
+.messageTable {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.messageTable th,
+.messageTable td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 🏷 Table Header */
+.messageTable th {
+  background: rgba(0, 255, 204, 0.2);
+  color: white;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* 📝 Table Rows */
+.messageTable tr {
+  transition: all 0.3s ease-in-out;
+}
+
+.messageTable tr:hover {
+  background: rgba(0, 255, 204, 0.2);
+  transform: scale(1.01);
+}
+
+/* 🛑 Error Message */
+.error {
+  color: red;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* 🔄 Loading Text */
+.loadingText {
+  text-align: center;
+  color: #00ffcc;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+/* 🌟 Responsive */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .messageTable th,
+  .messageTable td {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .searchInput {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .pagination {
+    gap: 10px;
+    font-size: 1rem;
+  }
+
+  .deleteBtn {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* 🔄 Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+.pagination button {
+  background: linear-gradient(135deg, #008080, #00e6b8);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+}
+
+.pagination button:disabled {
+  background: rgba(0, 255, 204, 0.3);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #006666, #00cc99);
+  transform: scale(1.1);
+}
+
+.pagination span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #00ffcc;
+}
+
+/* 💥 Enhanced Delete Button */
+.deleteBtn {
+  background: linear-gradient(135deg, #220000, #440000);
+  color: #ff4d4d;
+  border: 1px solid #ff1a1a;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-shadow: 0 0 6px rgba(255, 77, 77, 0.8);
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.deleteBtn:hover {
+  background: linear-gradient(135deg, #330000, #660000);
+  color: white;
+  box-shadow:
+    0 0 8px rgba(255, 0, 0, 0.6),
+    0 0 20px rgba(255, 0, 0, 0.5),
+    0 0 30px rgba(255, 0, 0, 0.4);
+  transform: scale(1.05);
+}
+
+/* 🗑 Optional trash icon spacing */
+.deleteBtnIcon {
+  font-size: 1.1rem;
+  margin-right: 4px;
+}

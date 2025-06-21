@@ -1,0 +1,319 @@
+/* Main Container */
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Keeps content at the top */
+  align-items: center;
+  min-height: 100vh; /* Ensures full viewport height */
+  background: radial-gradient(circle, #001f1f, #00b3b3);
+  animation: fadeIn 1s ease-in-out forwards;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 50px; /* Prevents the card from touching the footer */
+}
+
+/* Profile Heading */
+.profileHeading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #00ffcc;
+  text-shadow: 0px 0px 15px rgba(0, 255, 204, 0.9);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: fadeInUp 1s ease-in-out 0.3s forwards;
+  opacity: 1; /* Ensure it's visible */
+}
+
+/* Profile Card with Glassmorphism */
+.profileCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 35px;
+  margin-bottom: 50px;
+  width: 380px;
+  height: auto;
+  text-align: center;
+  box-shadow: 0px 10px 30px rgba(0, 255, 204, 0.3);
+  border: 2px solid rgba(0, 255, 204, 0.2);
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.phone {
+  transform: rotate(90deg);
+}
+
+/* Floating and 3D Depth on Hover */
+.profileCard:hover {
+  transform: scale(1.07) translateY(-5px);
+  box-shadow: 0px 15px 40px rgba(0, 255, 204, 0.5);
+}
+
+/* Profile Image with Glow */
+.profileImage {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 4px solid #00ffcc;
+  margin-bottom: 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+}
+
+/* Profile Name with Neon Glow */
+.profileName {
+  font-size: 1.9rem;
+  color: #00ffcc;
+  text-shadow: 0px 0px 12px rgba(0, 255, 204, 0.9);
+  margin-bottom: 5px;
+  animation: fadeInUp 1s ease-in-out 0.5s forwards;
+}
+
+/* Profile Role */
+.profileRole {
+  font-size: 1.3rem;
+  color: #cce6e6;
+  margin-bottom: 10px;
+  animation: fadeInUp 1s ease-in-out 0.7s forwards;
+}
+
+/* Profile Details */
+.profileDetail {
+  font-size: 1.1rem;
+  color: white;
+  margin: 15px 0;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 12px;
+  border: 3px solid #00ffcc;
+  transition: background 0.3s ease-in-out;
+}
+
+.profileDetail p {
+  margin: 8px 0;
+}
+
+.profileDetail strong {
+  color: #00ffcc;
+}
+
+/* Social Icons */
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.icon {
+  color: #00e6b8;
+  font-size: 1.7rem;
+  transition: transform 0.4s ease, color 0.3s ease-in-out;
+}
+
+.icon:hover {
+  color: white;
+  transform: rotate(360deg) scale(1.2);
+  text-shadow: 0px 0px 12px rgba(0, 255, 204, 1);
+}
+
+/* Button Container */
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Button Styles */
+.updateButton,
+.deleteButton {
+  font-size: 1rem;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+/* Update Button */
+.updateButton {
+  background: #00ffcc;
+  color: #003d3d;
+  box-shadow: 0 0 12px rgba(0, 255, 204, 0.5);
+}
+
+.updateButton:hover {
+  background: white;
+  color: #00b3b3;
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.9);
+}
+
+/* Delete Button */
+.deleteButton {
+  background: #ff4d4d;
+  color: white;
+  box-shadow: 0 0 12px rgba(255, 77, 77, 0.5);
+}
+
+.deleteButton:hover {
+  background: white;
+  color: #ff4d4d;
+  box-shadow: 0 0 20px rgba(255, 77, 77, 0.9);
+}
+
+/* Password Visibility Toggle */
+.passwordContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toggleButton {
+  background: #00ffcc;
+  color: #003d3d;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.toggleButton:hover {
+  background: white;
+  color: #00b3b3;
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.9);
+}
+
+/* Error Styling */
+.errorText {
+  color: #ff4d4d;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #ff4d4d;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(255, 77, 77, 0.6);
+  animation: fadeIn 0.5s ease-in-out;
+  margin-top: 15px;
+}
+
+/* Popup Overlay */
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Popup Box */
+.popupBox {
+  background: rgba(0, 77, 77, 0.9);
+  border: 2px solid #00ffcc;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  color: #a0e7e5;
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.6);
+  animation: fadeInUp 0.5s ease;
+}
+
+/* Close Button for Popup */
+.closePopupButton {
+  background: linear-gradient(135deg, #00b3b3, #00ffcc);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.closePopupButton:hover {
+  background: linear-gradient(135deg, #008080, #00e6b8);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .profileCard {
+    width: 80%;
+    padding: 25px;
+  }
+
+  .profileHeading {
+    font-size: 2rem;
+  }
+
+  .profileName {
+    font-size: 1.6rem;
+  }
+
+  .profileRole {
+    font-size: 1.1rem;
+  }
+
+  .profileDetail {
+    font-size: 1rem;
+  }
+
+  .updateButton, .deleteButton {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.profileCard::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(0, 255, 204, 0.15);
+  filter: blur(80px);
+  border-radius: 50%;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  animation: floatingGlow 5s infinite alternate ease-in-out;
+}
+
+@keyframes floatingGlow {
+  from { transform: translateX(-50%) translateY(0); }
+  to { transform: translateX(-50%) translateY(20px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

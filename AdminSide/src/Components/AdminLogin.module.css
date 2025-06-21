@@ -1,0 +1,218 @@
+/* 🌌 Fullscreen Background with Animated Glow */
+.loginAdmin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: radial-gradient(circle, #001f1f, #00b3b3);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+  animation: fadeIn 1.2s ease-in-out;
+  position: relative;
+}
+
+/* 🌟 Floating Background Glow */
+.loginAdmin::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(0, 255, 204, 0.2);
+  filter: blur(120px);
+  border-radius: 50%;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: floatingGlow 6s infinite alternate ease-in-out;
+}
+
+@keyframes floatingGlow {
+  0% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 30px) scale(1.05); }
+  100% { transform: translate(-50%, 0); }
+}
+
+/* 🌌 Subtle Background Animation */
+@keyframes backgroundShift {
+  0% { background: radial-gradient(circle, #001f1f, #00b3b3); }
+  50% { background: radial-gradient(circle, #002626, #00c2c2); }
+  100% { background: radial-gradient(circle, #001f1f, #00b3b3); }
+}
+
+.loginAdmin {
+  animation: backgroundShift 10s infinite alternate ease-in-out;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #00ffcc;
+  animation: fadeInUp 1s ease-in-out 0.5s forwards;
+  opacity: 1;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #a0e7e5;
+  animation: fadeInUp 1s ease-in-out 0.7s forwards;
+  opacity: 1;
+}
+
+/* ✨ Glassmorphic Login Form */
+.loginForm {
+  background: rgba(0, 77, 77, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+  width: 90%;
+  max-width: 380px;
+  animation: fadeInUp 1s ease-in-out 1s forwards;
+  transition: all 0.3s ease;
+}
+
+.loginForm:hover {
+  box-shadow: 0 0 25px rgba(0, 255, 204, 0.5);
+}
+
+/* 🏷️ Input Fields with Glow Effect */
+.inputGroup {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.inputGroup:hover {
+  border: 1px solid #00ffcc;
+}
+
+.inputGroup input {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 10px;
+  flex: 1;
+  font-size: 1rem;
+  color: white;
+  box-shadow: none;
+}
+
+.inputGroup input::placeholder {
+  color: #a0e7e5;
+}
+
+/* 🏷️ Smooth Focus Effect Instead of Outline */
+.inputGroup input:focus {
+ outline: none;
+ border: none;
+ box-shadow: none;
+ background-color: transparent;
+}
+
+/* 🎭 Submit Button */
+.submitButton {
+  background: linear-gradient(135deg, #00b3b3, #00ffcc);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submitButton:hover {
+  background: linear-gradient(135deg, #008080, #00e6b8);
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.7);
+}
+
+/* 🎭 Improve Button Click Effect */
+.submitButton:active {
+  transform: scale(0.95);
+  filter: brightness(0.9);
+}
+
+/* 🔘 Toggle Button */
+.toggleButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #00ffcc;
+  transition: transform 0.2s ease-in-out;
+}
+
+.toggleButton:hover {
+  transform: scale(1.1);
+}
+
+.icon {
+  color: #00ffcc;
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 480px) {
+  .loginForm {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .submitButton {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  /* 🌟 Improve Floating Glow Animation */
+  @keyframes floatingGlow {
+    0% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 30px) scale(1.05); }
+    100% { transform: translate(-50%, 0); }
+  }
+
+  /* 🎭 Improve Button Click Effect */
+  .submitButton:active {
+    transform: scale(0.95);
+    filter: brightness(0.9);
+  }
+
+  /* 🌌 Subtle Background Animation */
+  @keyframes backgroundShift {
+    0% { background: radial-gradient(circle, #001f1f, #00b3b3); }
+    50% { background: radial-gradient(circle, #002626, #00c2c2); }
+    100% { background: radial-gradient(circle, #001f1f, #00b3b3); }
+  }
+
+  .loginAdmin {
+    animation: backgroundShift 10s infinite alternate ease-in-out;
+  }
+}
+
+.emailValid {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #a0e7e5;
+  animation: fadeInUp 1s ease-in-out 0.7s forwards;
+  opacity: 1;
+}

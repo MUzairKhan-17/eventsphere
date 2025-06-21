@@ -1,0 +1,158 @@
+/* 🎨 Container */
+.attendeeContainer {
+  text-align: center;
+  padding: 2rem;
+  min-height: 100vh;
+  background: radial-gradient(circle, #001f1f, #00b3b3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* 💡 Title */
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #00ffcc;
+  text-shadow: 0 0 20px rgba(0, 255, 204, 0.8);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeInSlide 1s ease-in-out forwards;
+}
+
+/* 💎 Glassmorphic Card */
+.card {
+  background: rgba(0, 77, 77, 0.3);
+  backdrop-filter: blur(15px);
+  padding: 25px;
+  border-radius: 16px;
+  max-width: 500px;
+  width: 90%;
+  border: 1px solid rgba(0, 255, 204, 0.5);
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeInScale 0.7s ease-in-out forwards;
+}
+
+/* 🔥 Hover Glow */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 255, 204, 0.8);
+}
+
+/* ✍️ Typography */
+.welcomeText {
+  color: #00ffcc;
+  text-shadow: 0 0 10px rgba(0, 255, 204, 0.7);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  color: #00ffcc;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* 📋 List */
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.listItem {
+  background: rgba(255, 255, 255, 0.2);
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #a0e7e5;
+  text-align: left;
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+/* 🖱️ Hover */
+.listItem:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.03);
+}
+
+/* ✨ Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 📝 Register Section */
+.registerSection {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.registerLink {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 20px;
+  background-color: #00b894;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.registerLink:hover {
+  background-color: #009874;
+}
+
+/* 📱 Responsive */
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .card {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .listItem {
+    padding: 10px;
+  }
+}

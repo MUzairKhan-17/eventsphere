@@ -1,0 +1,285 @@
+/* AttendeeUpdate.module.css */
+
+.updateContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: radial-gradient(circle, #001f1f, #00b3b3);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  animation: fadeIn 1.2s ease-in-out;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+/* Floating Glow Background */
+.updateContainer::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(0, 255, 204, 0.2);
+  filter: blur(120px);
+  border-radius: 50%;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: floatingGlow 6s infinite alternate ease-in-out;
+  z-index: -1;
+}
+
+@keyframes floatingGlow {
+  from { transform: translateY(0); }
+  to { transform: translateY(30px); }
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #00ffcc;
+  animation: fadeInUp 1s ease-in-out 0.5s forwards;
+  opacity: 1;
+}
+
+.errorText {
+  color: #ff4d4d;
+  margin: 10px 0;
+  font-weight: bold;
+  text-align: center;
+}
+
+.warningText {
+  color: #ffcc00;
+  margin: 6px 0 12px 0;
+  font-weight: 600;
+  text-align: center;
+}
+
+.updateForm {
+  background: rgba(0, 77, 77, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: fadeInUp 1s ease-in-out;
+  transition: all 0.3s ease;
+}
+
+.updateForm:hover {
+  box-shadow: 0 0 25px rgba(0, 255, 204, 0.5);
+}
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.inputGroup:hover {
+  border: 1px solid #00ffcc;
+}
+
+.inputGroup input {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 10px;
+  flex: 1;
+  font-size: 1rem;
+  color: white;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Focus Effect */
+.inputGroup input:focus {
+  border-bottom: 2px solid #00ffcc;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Placeholder animation */
+.inputGroup input::placeholder {
+  color: #a0e7e5;
+  font-weight: 400;
+}
+
+.inputGroup input:focus::placeholder {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+/* Remove number spinners */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Icons */
+.icon {
+  margin-right: 10px;
+  color: #00ffcc;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+/* Password Wrapper */
+.passwordWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+/* Toggle Button */
+.toggleButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: #00ffcc;
+  transition: transform 0.2s ease-in-out;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+}
+
+.toggleButton:hover {
+  transform: scale(1.2);
+}
+
+/* Submit Button with Ripple + Pulse Effect */
+.submitButton {
+  background: linear-gradient(135deg, #00b3b3, #00ffcc);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  animation: pulse 3s infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.submitButton:hover {
+  background: linear-gradient(135deg, #008080, #00e6b8);
+  box-shadow: 0 0 25px rgba(0, 255, 204, 0.7);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Ripple animation */
+.submitButton::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.submitButton:active::after {
+  opacity: 1;
+  animation: ripple 0.6s ease-out;
+}
+
+/* Animations */
+@keyframes ripple {
+  from { transform: scale(0); opacity: 1; }
+  to { transform: scale(3); opacity: 0; }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 15px rgba(0, 255, 204, 0.3); }
+  50% { box-shadow: 0 0 25px rgba(0, 255, 204, 0.6); }
+  100% { box-shadow: 0 0 15px rgba(0, 255, 204, 0.3); }
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Shake animation */
+.shake {
+  animation: shakeAnim 0.4s;
+}
+
+@keyframes shakeAnim {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-10px); }
+  40%, 80% { transform: translateX(10px); }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .updateForm {
+    padding: 1.5rem;
+  }
+
+  .inputGroup {
+    padding: 8px;
+  }
+
+  .submitButton {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .toggleButton {
+    position: absolute;
+    right: 10%;
+  }
+}
+
+/* Optional Dark Mode Base Class */
+.dark .updateForm {
+  background: rgba(0, 0, 0, 0.3);
+  color: #00ffcc;
+}
+
+.phone{
+  rotate: 90deg;
+}

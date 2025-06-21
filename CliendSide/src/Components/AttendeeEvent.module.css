@@ -1,0 +1,248 @@
+/* Fullscreen Animated Background */
+.registerContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: radial-gradient(circle, #001f1f, #00b3b3);
+  color: white;
+  text-align: center;
+  padding: 7% 20px;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Floating Glow Effect */
+.registerContainer::before,
+.registerContainer::after {
+  content: "";
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  background: rgba(0, 255, 204, 0.15);
+  filter: blur(120px);
+  border-radius: 50%;
+  animation: floatingGlow 6s infinite alternate ease-in-out;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.registerContainer::before {
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.registerContainer::after {
+  bottom: 10%;
+  right: 30%;
+}
+
+/* Title */
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  color: #00ffcc;
+  text-shadow: 0 0 10px rgba(0, 255, 204, 0.7);
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out 0.5s forwards;
+}
+
+/* Glassmorphic Form */
+.registerForm {
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 77, 77, 0.4);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 0 25px rgba(0, 255, 204, 0.4);
+  width: 90%;
+  max-width: 380px;
+  animation: fadeInUp 1s ease-in-out 1s forwards;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3%;
+}
+
+.registerForm:hover {
+  box-shadow: 0 0 35px rgba(0, 255, 204, 0.6);
+}
+
+/* Input Groups */
+.inputGroup {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 1s ease-in-out 1.2s forwards;
+  position: relative;
+}
+
+.inputGroup:hover {
+  border: 1px solid #00ffcc;
+  box-shadow: 0 0 8px rgba(0, 255, 204, 0.7);
+}
+
+/* Input field */
+.inputGroup input {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 12px;
+  flex: 1;
+  font-size: 1rem;
+  color: white;
+}
+
+.inputGroup input::placeholder {
+  color: #a0e7e5;
+}
+
+/* Icons in input */
+.icon {
+  color: #00ffcc;
+  margin-right: 10px;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.inputGroup:hover .icon {
+  transform: scale(1.2);
+}
+
+/* Submit Button */
+.submitButton {
+  background: linear-gradient(135deg, #00b3b3, #00ffcc);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+  transform: perspective(1px) translateZ(0);
+}
+
+.submitButton:hover {
+  background: linear-gradient(135deg, #008080, #00e6b8);
+  box-shadow: 0 0 25px rgba(0, 255, 204, 0.8);
+  transform: scale(1.05);
+}
+
+.submitButton:active {
+  transform: scale(0.95);
+}
+
+/* Ripple effect */
+.submitButton::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.submitButton:active::after {
+  opacity: 1;
+  animation: ripple 0.6s ease-out;
+}
+
+/* Ripple animation */
+@keyframes ripple {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/* Error message */
+.error {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  color: #a0e7e5;
+  opacity: 1;
+  animation: fadeInUp 0.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatingGlow {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(30px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .registerForm {
+    padding: 2rem;
+  }
+
+  .inputGroup {
+    padding: 10px;
+  }
+
+  .submitButton {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
+/* Color for date label */
+.inputGroup label {
+  color: #00ffcc; /* neon teal color */
+  font-weight: bold;
+  text-shadow: 0 0 8px #00ffcc;
+}
+

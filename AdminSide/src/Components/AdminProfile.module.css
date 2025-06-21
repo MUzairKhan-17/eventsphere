@@ -1,0 +1,209 @@
+/* 🌌 Container */
+.profileContainer {
+  width: 100%;
+  min-height: 700px;
+  padding: 30px;
+  background: linear-gradient(135deg, #002b2b, #005b5b);
+  color: white;
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* 🏷 Title */
+.title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #00ffcc;
+  text-shadow: 0 0 12px rgba(0, 255, 204, 0.9);
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+
+/* 🪪 Card Container */
+.card {
+  background: rgba(0, 255, 204, 0.05);
+  border: 1px solid rgba(0, 255, 204, 0.2);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 👤 Info Row */
+.infoRow {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 14px;
+  font-size: 1.3rem;
+  background: rgba(0, 77, 77, 0.4);
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 255, 204, 0.2);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 255, 204, 0.2);
+}
+
+.infoRow:hover {
+  background: rgba(0, 255, 204, 0.15);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 0 12px rgba(0, 255, 204, 0.4);
+}
+
+/* 🌟 Icon Style */
+.icon {
+  color: #00ffcc;
+  font-size: 1.5rem;
+  text-shadow: 0 0 6px rgba(0, 255, 204, 0.8);
+}
+
+/* 🔐 Password Field */
+.passwordField {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: transparent;
+  padding: 8px 12px;
+  width: 100%;
+  margin-left: 10px;
+  color: white;
+}
+
+.passwordText {
+  flex-grow: 1;
+  font-size: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-right: 30px;
+}
+
+/* 👁 Toggle Button */
+.toggleBtn {
+  background: none;
+  border: none;
+  color: #00ffcc;
+  cursor: pointer;
+  font-size: 1.2rem;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.toggleBtn:hover {
+  color: #ffffff;
+}
+
+/* ✨ Animations */
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 12px rgba(0, 255, 204, 0.9);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(0, 255, 204, 1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 1024px) {
+  .card {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .profileContainer {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .infoRow {
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    flex-direction: row;
+  }
+
+  .icon {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .card {
+    padding: 15px;
+    gap: 14px;
+  }
+
+  .infoRow {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 1rem;
+  }
+
+  .icon {
+    font-size: 1.2rem;
+  }
+}
+
+.updatecontainer {
+  display: flex; 
+  justify-content: center; 
+  margin-top: 20px;
+}
+
+.updateBtn {
+  background: #00ffcc;
+  color: #002b2b;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px rgba(0, 255, 204, 0.6);
+}
+
+.updateBtn:hover {
+  background: #00e6b8;
+  color: white;
+  box-shadow: 0 0 16px rgba(0, 255, 204, 0.8);
+  transform: translateY(-2px) scale(1.03);
+}

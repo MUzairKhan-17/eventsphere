@@ -1,0 +1,284 @@
+/* 🌌 Fullscreen Background with Animated Glow */
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: radial-gradient(circle, #001f1f, #00b3b3);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+  position: relative; /* Ensures child elements stay contained */
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* 🌟 Floating Background Glow */
+.contactContainer::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(0, 255, 204, 0.2);
+  filter: blur(120px);
+  border-radius: 50%;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: floatingGlow 6s infinite alternate ease-in-out;
+}
+
+@keyframes floatingGlow {
+  from { transform: translateX(-50%) translateY(0); }
+  to { transform: translateX(-50%) translateY(30px); }
+}
+
+/* ✨ Title & Subtitle */
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #00ffcc;
+  opacity: 1;
+  animation: fadeInUp 1s ease-in-out 0.5s forwards;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #a0e7e5;
+  opacity: 1;
+  animation: fadeInUp 1s ease-in-out 0.7s forwards;
+}
+
+/* ✨ Glassmorphic Contact Form */
+.contactFormContainer {
+  background: rgba(0, 77, 77, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2.5rem;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+  width: 400px;
+  max-width: 90%;
+  opacity: 1;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-in-out 1s forwards;
+  transition: all 0.3s ease;
+}
+
+.contactFormContainer:hover {
+  box-shadow: 0 0 25px rgba(0, 255, 204, 0.5);
+}
+
+/* 🏷️ Input Fields */
+.inputGroup {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 1.2rem;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.inputGroup:hover {
+  border: 1px solid #00ffcc;
+}
+
+.input {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 12px;
+  flex: 1;
+  font-size: 1rem;
+  color: white;
+}
+
+.input::placeholder {
+  color: #a0e7e5;
+}
+
+/* 🌀 Icon Effects */
+.icon {
+  color: #00ffcc;
+  margin-right: 10px;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.inputGroup:hover .icon {
+  transform: scale(1.1);
+}
+
+/* 🎭 Submit Button */
+.submitButton {
+  background: linear-gradient(135deg, #00b3b3, #00ffcc);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.submitButton:hover {
+  background: linear-gradient(135deg, #008080, #00e6b8);
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.7);
+  transform: scale(1.05);
+}
+
+/* 📱 Fully Responsive Design */
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .contactFormContainer {
+    width: 90%;
+    padding: 2rem;
+    margin-bottom: 10px;
+  }
+}
+
+/* Tablets & Small Laptops */
+@media screen and (max-width: 768px) {
+  .contactContainer {
+    padding: 20px 10px;
+  }
+  
+  .contactContainer::before {
+    width: 250px;
+    height: 250px;
+    filter: blur(80px);
+    top: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .title {
+    font-size: 2.2rem;
+    opacity: 1;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    opacity: 1;
+  }
+
+  .contactFormContainer {
+    width: 95%;
+    padding: 1.8rem;
+    opacity: 1;
+  }
+
+  .inputGroup {
+    padding: 10px;
+  }
+
+  .input {
+    font-size: 0.9rem;
+  }
+
+  .icon {
+    font-size: 1rem;
+    margin-right: 8px;
+  }
+
+  .submitButton {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+}
+
+/* 📱 Mobile & Extra Small Screens */
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+    opacity: 1;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    opacity: 1;
+  }
+
+  .contactFormContainer {
+    width: 100%;
+    padding: 1.5rem;
+    opacity: 1;
+  }
+
+  .inputGroup {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px;
+  }
+
+  .icon {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+
+  .submitButton {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
+/* Ultra Small Devices */
+@media screen and (max-width: 360px) {
+  .title {
+    font-size: 1.6rem;
+    opacity: 1;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+    opacity: 1;
+  }
+
+  .contactFormContainer {
+    padding: 1.2rem;
+    opacity: 1;
+  }
+
+  .input {
+    font-size: 0.85rem;
+  }
+
+  .submitButton {
+    font-size: 0.9rem;
+  }
+}
+
+.phone{
+  rotate: 90deg;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeIn {
+  animation: fadeSlideIn 0.8s ease-out;
+}

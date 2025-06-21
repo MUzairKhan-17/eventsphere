@@ -1,0 +1,386 @@
+/* 🚀 Home Container */
+.homeContainer {
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  background: radial-gradient(circle, #001f1f, #00b3b3);
+  color: white;
+  padding-bottom: 50px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* 🔥 Glassmorphic Hero Section */
+.hero {
+  background: rgba(0, 77, 77, 0.3);
+  backdrop-filter: blur(12px);
+  padding: 80px 20px;
+  border-bottom-left-radius: 50% 20px;
+  border-bottom-right-radius: 50% 20px;
+  box-shadow: 0 8px 20px rgba(0, 255, 204, 0.3);
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+/* 🏆 Neon-Glowing Hero Title */
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #00ffcc;
+  text-shadow: 0 0 20px rgba(0, 255, 204, 0.8);
+}
+
+/* 💡 Hero Paragraph */
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #a0e7e5;
+}
+
+/* 🚀 Hover Effect */
+.hero:hover {
+  background: rgba(0, 77, 77, 0.5);
+}
+
+/* ✨ Call to Action Button */
+.ctaButton {
+  background: linear-gradient(135deg, #00b3b3, #00ffcc);
+  color: white;
+  padding: 14px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 1.2rem;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 255, 204, 0.4);
+}
+
+/* 🌟 Button Hover */
+.ctaButton:hover {
+  background: linear-gradient(135deg, #008080, #00e6b8);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 255, 204, 0.7);
+}
+
+/* 💎 Glassmorphic About Section */
+.about {
+  padding: 50px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  margin: 20px auto;
+  max-width: 900px;
+  box-shadow: 0 5px 15px rgba(0, 255, 204, 0.3);
+  transition: transform 0.3s ease-in-out;
+  color: white;
+  opacity: 0;
+  animation: fadeInScale 1s ease-in-out forwards;
+}
+
+/* ✨ Hover Effect */
+.about:hover {
+  transform: translateY(-5px);
+}
+
+/* 💡 About Text */
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #00ffcc;
+}
+
+.about p {
+  color: #a0e7e5;
+}
+
+/* 🚀 Features Section */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* 🌟 Glassmorphic Feature Cards */
+.featureCard {
+  background: rgba(0, 255, 204, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 25px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 255, 204, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  color: white;
+}
+
+/* 🎯 Feature Card Hover */
+.featureCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 15px rgba(0, 255, 204, 0.5);
+}
+
+/* 🔥 Feature Icons */
+.icon {
+  font-size: 3rem;
+  color: #00ffcc;
+  margin-bottom: 15px;
+}
+
+/* 🎬 How It Works Section */
+.howItWorks {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 50px 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 255, 204, 0.3);
+  opacity: 0;
+  animation: fadeInScale 1s ease-in-out forwards;
+}
+
+/* ✨ Steps */
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* 🎯 Step Card */
+.step {
+  background: rgba(0, 255, 204, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 10px;
+  width: 270px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 255, 204, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 🎬 Hover Effect */
+.step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 255, 204, 0.5);
+}
+
+/* 📞 Contact Section */
+.contact {
+  background: rgba(0, 77, 77, 0.3);
+  padding: 50px 20px;
+  width: 70%;
+  border-radius: 10px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 -5px 15px rgba(0, 255, 204, 0.3);
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  color: white;
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+/* 📞 Contact Button */
+.contactButton {
+  background: linear-gradient(135deg, #00b3b3, #00ffcc);
+  color: white;
+  padding: 14px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  margin: 20px auto 0 auto;
+}
+
+/* 💡 Button Hover */
+.contactButton:hover {
+  background: linear-gradient(135deg, #008080, #00e6b8);
+  transform: scale(1.05);
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .features,
+  .steps {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* 🎬 Animations */
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); }
+}
+
+/* ✨ Featured Expos Container */
+.featuredExpos {
+  margin: 40px 0;
+  background: rgba(0, 77, 77, 0.25);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 20px rgba(0, 255, 204, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  color: white;
+  width: 80%;
+}
+
+/* 🧊 Glassy Expo Grid */
+.expoPreviewGrid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-top: 20px;
+}
+
+/* 🔮 Neon Glass Cards */
+.expoPreviewCard {
+  background: rgba(0, 255, 204, 0.1);
+  border: 1px solid #00ffcc44;
+  border-radius: 15px;
+  padding: 20px;
+  color: #a0e7e5;
+  box-shadow: 0 4px 12px rgba(0, 255, 204, 0.2);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ✨ Card Hover */
+.expoPreviewCard:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 6px 15px rgba(0, 255, 204, 0.4);
+}
+
+/* 🚀 View All Link */
+.viewAllLink {
+  display: inline-block;
+  margin-top: 20px;
+  color: #00ffcc;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease-in-out;
+}
+
+/* 🔗 Hover Link */
+.viewAllLink:hover {
+  text-decoration: underline;
+  color: #a0e7e5;
+}
+
+/* ✅ Responsive Enhancements */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .ctaButton {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+
+  .about h2 {
+    font-size: 1.7rem;
+  }
+
+  .featureCard,
+  .step {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .homeContainer {
+    padding: 20px 10px;
+  }
+
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .about {
+    padding: 30px 15px;
+  }
+
+  .howItWorks {
+    padding: 30px 15px;
+  }
+
+  .contact {
+    width: 90%;
+    padding: 30px 15px;
+  }
+
+  .featuredExpos {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .expoPreviewGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .ctaButton {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+
+  .about h2 {
+    font-size: 1.5rem;
+  }
+
+  .featureCard,
+  .step,
+  .expoPreviewCard {
+    padding: 20px 15px;
+  }
+
+  .contactButton {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+
+  .viewAllLink {
+    font-size: 1rem;
+  }
+}
+
+/* ✨ Typewriter Glow */
+.typewriterText {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+  padding-bottom: 10px;
+}

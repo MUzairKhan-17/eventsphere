@@ -1,0 +1,123 @@
+/* 📌 Admin Panel Footer */
+.footer {
+  background: linear-gradient(135deg, #1b1b1b, #2c3e50);
+  color: white;
+  padding: 25px 30px;
+  font-family: "Arial", sans-serif;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* 🏢 Footer Container */
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: 30px; /* 🧩 Space between columns */
+}
+
+/* 📌 Branding Section */
+.brand {
+  flex: 1;
+  min-width: 200px;
+  text-align: left;
+}
+
+.brand h2 {
+  font-size: 1.6rem;
+  color: #00ffcc;
+  margin-bottom: 8px;
+  margin-top: 5px;
+  text-shadow: 0 0 8px rgba(0, 255, 204, 0.7);
+}
+
+.brand p {
+  font-size: 0.9rem;
+  color: #cce6e6;
+  margin: 0;
+}
+
+/* 📌 Quick Navigation Links */
+.links {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+}
+
+.links ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+}
+
+.links li {
+  display: inline;
+}
+
+.links a {
+  color: #00e6b8;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.links a:hover {
+  color: white;
+}
+
+/* 📞 Support & Contact */
+.contact {
+  flex: 1;
+  min-width: 200px;
+  text-align: right;
+}
+
+.contact p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.contact a {
+  color: #00e6b8;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  color: white;
+}
+
+/* 📱 Responsive Layout */
+@media (max-width: 768px) {
+  .footer .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .brand,
+  .links,
+  .contact {
+    text-align: center;
+  }
+
+  .links ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
