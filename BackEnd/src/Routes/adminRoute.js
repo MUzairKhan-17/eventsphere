@@ -1,5 +1,6 @@
 // routes/adminRouter.js
 import express from "express";
+import bcrypt from "bcrypt";
 import { Admin } from "../Models/Admin.js";
 import { User } from "../Models/User.js";
 import { Event } from "../Models/Event.js";
@@ -28,20 +29,33 @@ adminRouter.get("/stats/totals", async (req, res) => {
   }
 });
 
+// Admin Login
 adminRouter.post("/login", async (req, res) => {
   const { email, password } = req.body;
-  const admin = await Admin.findOne({ email }).select("+password");
-  if (!admin || admin.password !== password)
-    return res.status(400).json({ error: "Invalid email or password!" });
+  try {
+    const admin = await Admin.findOne({ email }).select("+password");
+    if (!admin) {
+      return res.status(400).json({ error: "Invalid email or password!" });
+    }
 
-  req.session.adminId = admin._id;
-  res.json({ message: "Login successful!", adminId: admin._id, email });
+    const isMatch = await bcrypt.compare(password, admin.password);
+    if (!isMatch) {
+      return res.status(400).json({ error: "Invalid email or password!" });
+    }
+
+    req.session.adminId = admin._id;
+    res.json({ message: "Login successful!", adminId: admin._id, email });
+  } catch (err) {
+    res.status(500).json({ error: "Server error during login" });
+  }
 });
 
+// Check Admin Session
 adminRouter.get("/check-session", (req, res) => {
   res.json({ loggedIn: !!req.session.adminId, adminId: req.session.adminId });
 });
 
+// Admin Logout
 adminRouter.post("/logout", (req, res) => {
   req.session.destroy(err => {
     if (err) return res.status(500).send("Logout failed.");
@@ -50,40 +64,37 @@ adminRouter.post("/logout", (req, res) => {
   });
 });
 
+// Get All Users
 adminRouter.get("/users", async (req, res) => {
   const users = await User.find();
   res.json(users);
 });
 
+// Check Admin Email Exists
 adminRouter.post("/check-admin-email", async (req, res) => {
   const { email } = req.body;
   try {
-    const admin = await Admin.findOne({ email }); // <-- await here
-    if (admin) {
-      res.json({ exists: true });
-    } else {
-      res.json({ exists: false });
-    }
+    const admin = await Admin.findOne({ email });
+    res.json({ exists: !!admin });
   } catch (err) {
     res.status(500).json({ error: "An error occurred while checking email." });
   }
 });
 
+// Delete User by ID
 adminRouter.delete("/user-delete/:id", async (req, res) => {
   try {
     const user = await User.findByIdAndDelete(req.params.id);
-
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
-
     res.json({ message: "User deleted successfully" });
   } catch (error) {
     res.status(500).json({ message: "Server error", error });
   }
 });
 
-// ✅ Activate / Deactivate User API
+// Toggle User Active Status
 adminRouter.put("/user-status/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -93,9 +104,7 @@ adminRouter.put("/user-status/:id", async (req, res) => {
       return res.status(404).json({ success: false, message: "User not found" });
     }
 
-    // Toggle the status (1 = Active, 0 = Inactive)
     user.userstatus = user.userstatus === 1 ? 0 : 1;
-
     await user.save();
 
     res.json({
@@ -109,7 +118,7 @@ adminRouter.put("/user-status/:id", async (req, res) => {
   }
 });
 
-// ✅ GET Admin Profile by ID (you can use session/decoded token instead)
+// Get Admin Profile
 adminRouter.get("/profile/me", async (req, res) => {
   if (!req.session.adminId) {
     return res.status(401).json({ error: "Unauthorized" });
@@ -122,3 +131,26 @@ adminRouter.get("/profile/me", async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
+
+(async () => {
+  try {
+    const defaultEmail = "admin@eventsphere.com";
+    const defaultPassword = "admin123";
+
+    const existingAdmin = await Admin.findOne({ email: defaultEmail });
+    if (!existingAdmin) {
+      const hashedPassword = await bcrypt.hash(defaultPassword, 10);
+      await Admin.create({
+        email: defaultEmail,
+        password: hashedPassword,
+        fullname: "Default Admin",
+        phone: "0000000000", // <-- You can customize this
+      });
+      console.log("✅ Default admin created.");
+    } else {
+      console.log("ℹ️ Default admin already exists.");
+    }
+  } catch (err) {
+    console.error("❌ Error creating default admin:", err);
+  }
+})();
